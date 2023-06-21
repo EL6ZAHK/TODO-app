@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO LIST</title>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="/assets/todo-list.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/styles.css">
 </head>
 <body>
      <h1>MY ToDO List</h1>
     <div id="todo-table">
-        <form >
+        <form method="POST">
             <input type="text" name="item" placeholder="ADD NEW ITEM .." required>
             <button type="submit">Add Item</button>
 
         </form>
 
         <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
+          <% for(var i=0; i< todos.length; i++){ %>
+            <li><%= todos[i].item %></li>
+            <%}%>
+
         </ul>
        
     </div>
